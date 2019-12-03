@@ -1,0 +1,63 @@
+a,
+button {
+  -webkit-transition: all .3s;
+  transition: all .3s; }
+  a:hover,
+  button:hover {
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+  a:focus,
+  button:focus {
+    outline: none; }
+
+input:focus {
+  outline: none; }
+  input:focus::-webkit-input-placeholder {
+    color: transparent; }
+  input:focus:-moz-placeholder {
+    color: transparent; }
+  input:focus::-moz-placeholder {
+    color: transparent; }
+  input:focus:-ms-input-placeholder {
+    color: transparent; }
+
+body {
+  min-width: 320px;
+  position: relative;
+  font: 16px/1 "FuturaPT-Book", sans-serif;
+  overflow-x: hidden;
+  background: #fff; }
+
+.video-responsive {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  margin: 0px auto;
+  width: 100%; }
+  .video-responsive iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+
+.table-responsive {
+  max-width: 100%;
+  overflow: auto; }
+
+.img-responsive {
+  display: block;
+  max-width: 100%; }
+
+@media (max-width: 1200.98px) {
+  color: red; }
+
+@media (max-width: 992.98px) {
+  color: red; }
+
+@media (max-width: 768.98px) {
+  color: red; }
+
+@media (max-width: 576.98px) {
+  color: red; }
