@@ -1,5 +1,18 @@
-
 $(document).ready(function() {
+
+//scroll add .scroll to buttons for slowly move to anchor
+$('.scroll').bind('click.smoothscroll',function (e) {
+  e.preventDefault();
+  
+  var target = this.hash,
+  $target = $(target);
+  
+  $('html, body').stop().animate({
+    'scrollTop': $target.offset().top
+  }, 900, 'swing', function () {
+    window.location.hash = target;
+  });
+});
 
 // counter of time and date, add to page <div id="CDT"></div>
 if( $("#CDT") != null ){
@@ -23,20 +36,24 @@ if( $("#CDT") != null ){
     if( ( this.tl - today ) > 0 ){
      timer += '<div class="number-wrapper">\
 					<div class="line">	</div>\
-     				<span class="number">'+day+'</span>\
+     				<span class="number">'+this.addZero(day)+'</span>\
      				<div class="caption">Дней</div>\
     			</div>';
      timer += '<div class="number-wrapper">\
 					<div class="line">	</div>\
-     				<span class="number">'+hour+'</span>\
+     				<span class="number">'+this.addZero(hour)+'</span>\
      				<div class="caption">Часов</div>\
     			</div>';
-     timer += '<div class="number-wrapper last">\
+     timer += '<div class="number-wrapper">\
 					<div class="line">	</div>\
      				<span class="number">'+this.addZero(min)+'</span>\
      				<div class="caption">Минут</div>\
     			</div>';
-
+     timer += '<div class="number-wrapper last">\
+					<div class="line">	</div>\
+     				<span class="number">'+this.addZero(sec)+'</span>\
+     				<div class="caption">секунд</div>\
+    			</div>';
     // console.log("day: "+day+" hour: "+hour+" min: "+this.addZero(min))
      this.elem.innerHTML = timer;
      tid = setTimeout( function(){me.countDown();},10 );
@@ -47,7 +64,7 @@ if( $("#CDT") != null ){
    },addZero:function(num){ return ('0'+num).slice(-2); }
   }
   function CDT(){
-   var tl = new Date('2018/12/09 00:00:00');
+   var tl = new Date('2019/12/09 00:00:00');
 
    var timer = new CountdownTimer('CDT',tl,'<span class="number-wrapper"><div class="line"></div><span class="number end">Time is up!</span></span>');
    timer.countDown();
