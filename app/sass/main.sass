@@ -15,8 +15,8 @@
 	padding: 15px 0
 	border: 0
 	border-radius: 10px
-	background-image: linear-gradient( 92deg, rgb(245,190,71) 0%, rgb(247,27,105) 100%);
-	box-shadow: 0px 4px 62px 0px rgba(247, 32, 104, 0.3);
+	background-image: linear-gradient( 92deg, rgb(245,190,71) 0%, rgb(247,27,105) 100%)
+	// box-shadow: 0px 4px 62px 0px rgba(247, 32, 104, 0.3)
 	font: 1.25rem/1.25 $fontFPTBook
 	text-decoration: none
 	text-align: center
@@ -79,17 +79,21 @@
 		display: inline-block
 		width: 100%
 		background: linear-gradient(45deg, rgb(245,190,71) 15%, rgb(247,27,105))
-		-webkit-background-clip: text
-		-webkit-text-fill-color: transparent
-		font: 2.5rem/1 $fontBN
-		text-transform: uppercase
-		// text-align: center
-		color: rgb(247,27,105)
 		position: relative
-		span
+		color: rgb(247,27,105)
+		-webkit-text-fill-color: transparent
+		-webkit-background-clip: text
+		span 
+			font: 2.35rem/1 $fontBN
+			text-transform: uppercase
+			-webkit-text-fill-color: transparent
+			-webkit-background-clip: text
+		span.big
 			display: block
 			font-weight: bold
-			font-size: 2.85rem
+			font-size: 2.5rem
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
 		&:before
 			content: url(../img/sphare.png)
 			transform: scale(.6)
@@ -228,11 +232,9 @@
 					left: -15px
 
 
-
-
 #four 
 	width: 100%
-	padding: 0 0 30px 0
+	padding: 30px 0
 	height: auto
 	background: #f8f9fb
 	.title
@@ -352,6 +354,18 @@
 		position: absolute
 		right: -10px
 		top: 30px
+	&::before
+		content: url(../img/five__right.png)
+		content: ""
+		width: 30px 
+		height: 60px
+		background: url(../img/redsphare.png) no-repeat center center/cover
+		position: absolute
+		left: 0px
+		top: 20px
+
+
+
 	.title
 		margin-bottom: 15px
 	.five__form
@@ -442,45 +456,26 @@ footer
 	height: auto
 	padding: 50px 0
 	min-height: 100vh
-	.thy_title
-		font: 1.75em/1em $fontFPTDemi
+	.thy__title
+		font: bold 1.75rem/1 $fontFPTDemi
 		text-align: center
 		text-transform: uppercase
-		color: #fb3535
-		color: #00c107
-		margin-bottom: 40px
-	.thy_text1
-		font: 1.5em/1em $fontFPTBold
+		color: black
+		margin-bottom: 10px
+	.thy__text1
+		font: 1.125rem/1 $fontFPTBook
 		text-align: center
 		color: black
 		margin-bottom: 20px
-	.thy_list
-		margin-bottom: 40px
-		li 
-			font: 1em/1em $fontFPTBook
-			margin-bottom: 40px
-			padding-left: 30px
-			position: relative
-			span
-				font: 1em/1em $fontFPTDemi
-			&:before
-				content: attr(data-step)
-				font: 1.5em/1em $fontFPTBold
-				color: red
-				// position: absolute
-				// left: 0
-				// top: 0
-
-	.thy_text2
+	.thy__text2
 		font: 1em/1em $fontFPTBook
 		text-align: center
 		color: #949596
 		margin-bottom: 10px
-	.thy_email
-		display: block
-		font: 1em/1em $fontFPTBook
-		text-align: center
-		color: #949596
+		a
+			color: #f72367
+			&.email
+				display: block
 
 
 

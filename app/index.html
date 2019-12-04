@@ -36,7 +36,7 @@
 				</ul>
 
 				<p class="first__date">12 - 21 декабря 2019 года</p>
-				<h1 class="first__title">Новогодний марафон <span>по целеполаганию </span></h1>
+				<h1 class="first__title"><span>Новогодний марафон</span></span> <span class="big">по целеполаганию </span></h1>
 				<p class="first__masha">с Марией Солодар</p>
 
 				<p class="first__text1">Участвуйте и превратите наступающий год </br>в лучший год </p>
@@ -137,8 +137,6 @@
 				<div class="counter">
 					<div id="CDT"></div>
 				</div>
-				<!-- <p class="four__text3">До повышения цены осталось:</p> -->
-				<!-- <a href="https://mariyasolodar.e-autopay.com/buy/437839/41095" class="btn">Оплатить участие и превратить<br> 2019й в лучший год жизни!</a> -->
 			</div>
 		</div>
 	</div>
@@ -151,12 +149,18 @@
 			<div class="col">
 
 				<h2 class="title">Занимайте место уже <br>сейчас!</h2>
-				<form class="five__form" method="POST" id="mainform">
-					<input type="text" name="name" placeholder="Ваш телефон" required>
-					<input type="text" name="insta" placeholder="Ваш аккаунт в инстаграме " required>
+				<form class="five__form" action="https://mariyasolodar.e-autopay.com/buy/save_order_data.php" method="POST" id="mainform">
+					<input type="text" name="phone" placeholder="Ваш телефон" required>
+					<input type="text" name="additional_field2" placeholder="Ваш аккаунт в инстаграме " required>
 					<input type="email" name="email" placeholder="Ваш email" required>
-					<button type="submit" class="btn">Оплатить участие и превратить <br>2020-й в лучший год жизни!
-					</button>
+
+					<button type="submit" class="btn">Оплатить участие и превратить <br>2020-й в лучший год жизни!</button>
+
+					<input type="hidden" name="form_charset" value="">
+					<input type="hidden" name="tovar_id" value="437839">
+					<input type="hidden" name="form_id" value="41095">
+					<input type="hidden" name="order_page_referer" value="">
+
 				</form>
 
 			</div>
@@ -205,8 +209,7 @@
 </footer>
 
 
-
-	<!--[if lt IE 9]>
+<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
 	<script src="libs/html5shiv/html5shiv.min.js"></script>
 	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
@@ -215,6 +218,25 @@
 
 	<script src="libs/jquery3.3.1.min.js"></script>
 	<script src="js/common.js"></script>
-
+	
 </body>
 </html>
+
+<!-- <script charset="UTF-8" type="text/javascript" src="https://mariyasolodar.e-autopay.com/js/orderform_41095/437839/buy"></script> -->
+<!-- <form action="https://mariyasolodar.e-autopay.com/buy/save_order_data.php" method="post" name="order_form" target="_parent" onsubmit="return EAcheckForm(this);">
+	<input type="hidden" name="additional_field1_name" value="ФИО">
+	<input type="text" name="additional_field1" class="ea_add_field ea_input" value="" required="required">
+	<input type="email" name="email" class="ea_email ea_input" value="" required="required">
+	<input type="text" name="phone" class="ea_phone ea_input" value="" required="required">
+	<input type="hidden" name="additional_field2_name" value="Instagram">
+	<input type="text" name="additional_field2" class="ea_add_field ea_input" value="" required="required">
+	<textarea class="ea_comment ea_textarea" name="notes"></textarea>
+
+	<input type="submit" class="ea_submit" name="submit" value="Отправить">
+
+	<input type="hidden" name="form_charset" id="form_charset" value="">
+	<input type="hidden" name="tovar_id" value="437839">
+	<input type="hidden" name="form_id" value="41095">
+	<input type="hidden" name="order_page_referer" id="order_page_referer" value="">
+</form>
+ -->

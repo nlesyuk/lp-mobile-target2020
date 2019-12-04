@@ -15,8 +15,7 @@ $('.scroll').bind('click.smoothscroll',function (e) {
 });
 
 // counter of time and date, add to page <div id="CDT"></div>
-if( $("#CDT") != null ){
-  function CountdownTimer(elm,tl,mes){
+/*   function CountdownTimer(elm,tl,mes){
    this.initialize.apply(this,arguments);
   }
   CountdownTimer.prototype={
@@ -72,16 +71,19 @@ if( $("#CDT") != null ){
   }
   window.onload=function(){
    CDT();
-  }
-}else{
-  console.log("none CDT");
-}
+  } */
 
 
 
 
 
-
+// countdown
+var timerConfig = {
+  el: '#CDT',
+  endTimer: new Date('2019/12/09 00:00:00')
+};
+var timer = new CountdownTimer( timerConfig.el, timerConfig.endTimer);
+timer.countDown();
 
 	
 //end ready
@@ -89,6 +91,83 @@ if( $("#CDT") != null ){
 
 
 
+	/* How use class countDownTimer
+		new CountdownTimer({
+			".countdown",
+			Date.now() + 30000,
+			"time is end"
+		});
+	 */
+	function CountdownTimer(elem, time, message){
+		this.initialize.apply(this, arguments);
+	}
+
+	CountdownTimer.prototype = {
+
+		initialize: function(elem, time, message) {
+			this.elems = document.querySelectorAll(elem);
+			this.endTime 	= time;
+			message = message || "00:00:00";
+			this.message 	= '<span class="number-wrapper end">\
+				<div class="line"></div>\
+				<span class="number end">'+ message +'</span>\
+			</span>';
+		},
+
+		countDown: function(){
+			var today = new Date();
+			var resultDate = this.endTime - today;
+			var day   = Math.floor( resultDate / (24*60*60*1000));
+			var hour  = Math.floor(( resultDate % (24*60*60*1000)) / (60*60*1000));
+			var min   = Math.floor(( resultDate % (24*60*60*1000)) / (60*1000)) % 60;
+			var sec   = Math.floor(( resultDate % (24*60*60*1000)) / 1000) % 60 % 60;
+			var timer = '';
+			var self  = this;
+
+			if( resultDate > 0 ){
+				// if you need 'day' just copy and paste html below in variable timer
+        timer += '<div class="number-wrapper">\
+              <div class="line">	</div>\
+                <span class="number">'+this.addZero(day)+'</span>\
+                <div class="caption">Дней</div>\
+              </div>';
+        timer += '<div class="number-wrapper">\
+              <div class="line">	</div>\
+                <span class="number">'+this.addZero(hour)+'</span>\
+                <div class="caption">Часов</div>\
+              </div>';
+        timer += '<div class="number-wrapper">\
+              <div class="line">	</div>\
+                <span class="number">'+this.addZero(min)+'</span>\
+                <div class="caption">Минут</div>\
+              </div>';
+        timer += '<div class="number-wrapper last">\
+              <div class="line">	</div>\
+                <span class="number">'+this.addZero(sec)+'</span>\
+                <div class="caption">секунд</div>\
+              </div>';
+
+				for (var i = 0; i < this.elems.length; i++) {
+					this.elems[i].innerHTML = timer;
+				}
+
+				var id = setTimeout( function(){
+					self.countDown();
+				}, 10);
+				
+			} else {
+
+				for (var i = 0; i < this.elems.length; i++) {
+					this.elems[i].innerHTML = this.message;
+				}
+
+			}
+			
+		},
+		addZero: function(num){
+			return ('0'+num).slice(-2);
+		}
+	}
 
 // function declarations:
 

@@ -124,8 +124,6 @@ body {
   -webkit-border-radius: 10px;
           border-radius: 10px;
   background-image: linear-gradient(92deg, #f5be47 0%, #f71b69 100%);
-  -webkit-box-shadow: 0px 4px 62px 0px rgba(247, 32, 104, 0.3);
-          box-shadow: 0px 4px 62px 0px rgba(247, 32, 104, 0.3);
   font: 1.25rem/1.25 "FuturaPT-Book", sans-serif;
   text-decoration: none;
   text-align: center;
@@ -193,16 +191,21 @@ body {
     display: inline-block;
     width: 100%;
     background: linear-gradient(45deg, #f5be47 15%, #f71b69);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font: 2.5rem/1 "BebasNeueRegular", sans-serif;
-    text-transform: uppercase;
+    position: relative;
     color: #f71b69;
-    position: relative; }
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; }
     #first .first__title span {
+      font: 2.35rem/1 "BebasNeueRegular", sans-serif;
+      text-transform: uppercase;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; }
+    #first .first__title span.big {
       display: block;
       font-weight: bold;
-      font-size: 2.85rem; }
+      font-size: 2.5rem;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; }
     #first .first__title:before {
       content: url(../img/sphare.png);
       -webkit-transform: scale(0.6);
@@ -344,7 +347,7 @@ body {
 
 #four {
   width: 100%;
-  padding: 0 0 30px 0;
+  padding: 30px 0;
   height: auto;
   background: #f8f9fb; }
   #four .title {
@@ -479,6 +482,15 @@ body {
     position: absolute;
     right: -10px;
     top: 30px; }
+  #five::before {
+    content: url(../img/five__right.png);
+    content: "";
+    width: 30px;
+    height: 60px;
+    background: url(../img/redsphare.png) no-repeat center center/cover;
+    position: absolute;
+    left: 0px;
+    top: 20px; }
   #five .title {
     margin-bottom: 15px; }
   #five .five__form input {
@@ -578,38 +590,23 @@ footer {
   height: auto;
   padding: 50px 0;
   min-height: 100vh; }
-  #thy .thy_title {
-    font: 1.75em/1em "FuturaPT-Demi", sans-serif;
+  #thy .thy__title {
+    font: bold 1.75rem/1 "FuturaPT-Demi", sans-serif;
     text-align: center;
     text-transform: uppercase;
-    color: #fb3535;
-    color: #00c107;
-    margin-bottom: 40px; }
-  #thy .thy_text1 {
-    font: 1.5em/1em "FuturaPT-Bold", sans-serif;
+    color: black;
+    margin-bottom: 10px; }
+  #thy .thy__text1 {
+    font: 1.125rem/1 "FuturaPT-Book", sans-serif;
     text-align: center;
     color: black;
     margin-bottom: 20px; }
-  #thy .thy_list {
-    margin-bottom: 40px; }
-    #thy .thy_list li {
-      font: 1em/1em "FuturaPT-Book", sans-serif;
-      margin-bottom: 40px;
-      padding-left: 30px;
-      position: relative; }
-      #thy .thy_list li span {
-        font: 1em/1em "FuturaPT-Demi", sans-serif; }
-      #thy .thy_list li:before {
-        content: attr(data-step);
-        font: 1.5em/1em "FuturaPT-Bold", sans-serif;
-        color: red; }
-  #thy .thy_text2 {
+  #thy .thy__text2 {
     font: 1em/1em "FuturaPT-Book", sans-serif;
     text-align: center;
     color: #949596;
     margin-bottom: 10px; }
-  #thy .thy_email {
-    display: block;
-    font: 1em/1em "FuturaPT-Book", sans-serif;
-    text-align: center;
-    color: #949596; }
+    #thy .thy__text2 a {
+      color: #f72367; }
+      #thy .thy__text2 a.email {
+        display: block; }
