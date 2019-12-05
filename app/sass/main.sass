@@ -27,6 +27,71 @@
 	max-width: 540px!important
 
 
+
+
+
+
+#rev
+	padding: 0 0 30px 0
+	background: #f8f9fb
+	.title
+		margin-bottom: 30px
+
+#owl_slider
+	position: relative
+	z-index: 2
+	&.owl-carousel
+		.owl-stage-outer 
+			width: 100%
+		.owl-nav
+			display: block
+			width: 100%
+			position: absolute
+			top: calc(50% - 19px)
+			display: flex
+			justify-content: space-between
+			pointer-events: none 
+			.owl-prev,
+			.owl-next
+				display: flex
+				justify-content: center
+				align-items: center
+				width: 18px
+				height: 40px
+				padding: 5px 12px
+				padding: 0
+				border: 1px solid #f72367
+				background: #f72367
+				color: white
+				border-radius: 10px
+				pointer-events: auto
+				position: relative
+				span 
+					font-size: 40px
+					line-height: 20px
+					position: relative
+					top: -4px
+				&:hover,
+				&:focus
+					outline: none
+					border: 1px solid $accent
+		.owl-item
+			padding: 0px
+			img
+				max-width: 100%
+
+
+
+
+
+
+
+
+
+
+
+
+
 #first 
 	width: 100%
 	padding: 30px 0
